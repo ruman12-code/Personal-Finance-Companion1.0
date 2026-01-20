@@ -1,13 +1,15 @@
 export async function generateGeminiResponse(prompt: string) {
-  const res = await fetch("/api/gemini", {
+  const response = await fetch("/api/gemini", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({ prompt })
   });
 
-  if (!res.ok) {
-    throw new Error("Gemini request failed");
+  if (!response.ok) {
+    throw new Error("Failed to fetch Gemini response");
   }
 
-  return res.json();
+  return response.json();
 }
