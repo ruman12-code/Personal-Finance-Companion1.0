@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { generateGeminiResponse } from "./services/geminiService";
+import { generateGeminiResponse } from "/services/geminiService.ts";
 
 export default function App() {
   const [prompt, setPrompt] = useState("");
